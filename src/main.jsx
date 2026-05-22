@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
@@ -13,13 +13,13 @@ import "./engine/css/player.css";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HalamanTransisi />} />
         <Route path="/NyanyianGPM" element={<HalamanUtama />} />
         {/* <Route path="/NyanyianGPM/Lagu" element={<HalamanRincianLagu />} /> */}
         <Route  path="/NyanyianGPM/Lagu/:songId" element={<HalamanRincianLagu  />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 )

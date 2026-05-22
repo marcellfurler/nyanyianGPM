@@ -68,7 +68,7 @@ function HalamanRincianLagu() {
     const loadSong = async () => {
       try {
         setLoading(true);
-        const response = await fetch("/song-library.json");
+        const response = await fetch("song-library.json");
 
         if (!response.ok) {
           throw new Error("Gagal memuat library lagu");
