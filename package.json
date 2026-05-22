@@ -2,6 +2,7 @@
   "name": "nyanyian_gpm",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://marcellfurler.github.io/nyanyianGPM",
   "type": "module",
   "scripts": {
   "dev": "vite",
