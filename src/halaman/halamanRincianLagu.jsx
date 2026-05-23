@@ -68,7 +68,9 @@ function HalamanRincianLagu() {
     const loadSong = async () => {
       try {
         setLoading(true);
-        const response = await fetch("song-library.json");
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}song-library.json`
+        );
 
         if (!response.ok) {
           throw new Error("Gagal memuat library lagu");
@@ -130,7 +132,7 @@ function HalamanRincianLagu() {
         // LOAD SVG
         // =========================================
         const svgResponse = await fetch(
-          songDetails.dataPath + songDetails.svgFile
+          `${import.meta.env.BASE_URL}${songDetails.dataPath}${songDetails.svgFile}`
         );
 
         if (!svgResponse.ok) {
@@ -206,8 +208,12 @@ function HalamanRincianLagu() {
         // LOAD YAML
         // =========================================
         const [syncResponse, configResponse] = await Promise.all([
-          fetch(songDetails.dataPath + songDetails.syncFile),
-          fetch(songDetails.dataPath + songDetails.configFile)
+          fetch(
+            `${import.meta.env.BASE_URL}${songDetails.dataPath}${songDetails.syncFile}`
+          ),
+          fetch(
+            `${import.meta.env.BASE_URL}${songDetails.dataPath}${songDetails.configFile}`
+          )
         ]);
 
         if (!syncResponse.ok) {
@@ -248,8 +254,7 @@ function HalamanRincianLagu() {
         }
 
         audioEl.pause();
-        audioEl.src = songDetails.mediaPath + songDetails.audioFile;
-        audioEl.load();
+        audioEl.src = `${import.meta.env.BASE_URL}${songDetails.mediaPath}${songDetails.audioFile}`;
 
         // =========================================
         // SYNCHRONISATOR

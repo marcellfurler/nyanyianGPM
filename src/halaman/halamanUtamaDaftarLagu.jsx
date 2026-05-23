@@ -17,13 +17,19 @@ function HalamanUtama() {
 
     const fetchSongs = async () => {
       try {
-        const response = await fetch('/song-library.json');
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}song-library.json`
+        );
+
         if (!response.ok) {
           throw new Error(`Gagal mengambil data: ${response.statusText}`);
         }
+
         const data = await response.json();
+
         setSongs(data);
-        setFilteredSongs(data); // Set awal hasil filter sama dengan seluruh data lagu
+        setFilteredSongs(data);
+
       } catch (e) {
         setError(`Gagal memuat daftar lagu: ${e.message}`);
         console.error(e);
