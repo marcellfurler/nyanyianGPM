@@ -74,7 +74,7 @@ function HalamanTransisi() {
   if (step === 1) {
     return (
       <div style={styles.containerTransisi}>
-        <h1 style={styles.title}>NYANYIAN JEMAAT</h1>
+        <h2 style={styles.subtitle}>NYANYIAN JEMAAT</h2>
         <img src={logo2} style={styles.logo} alt="Logo" />
         <h2 style={styles.subtitle}>GEREJA PROTESTAN MALUKU</h2>
       </div>
